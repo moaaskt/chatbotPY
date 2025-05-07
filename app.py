@@ -1,39 +1,17 @@
 from flask import Flask, request, jsonify, render_template
 import random
+import json
+from pathlib import Path
 
 app = Flask(__name__)
 
-# Banco de respostas personalizado
-respostas = {
-    "saudacoes": [
-        "Olá! Como posso ajudar? 😊", 
-        "Oi! Pronto para conversar!",
-        "E aí, beleza?"
-    ],
-    "duvidas": {
-        "funcionamento": "Sou um chatbot programado para responder perguntas específicas!",
-        "criador": "Fui criado por você usando Python e Flask!",
-        "idade": "Nasci hoje! Estou bem novo ainda..."
-    },
-    "comandos": {
-        "piada": "Por que o Python não gosta de festas? Porque tem medo de 'tuples'!",
-        "hora": lambda: f"Agora são {datetime.now().strftime('%H:%M')}",
-        "dica": random.choice([
-            "Digite 'ajuda' para ver opções",
-            "Experimente perguntar sobre meu funcionamento"
-        ])
-    },
-    "despedidas": [
-        "Até logo! 👋",
-        "Foi bom conversar!",
-        "Tchau! Volte sempre!"
-    ],
-    "padrao": [
-        "Não entendi... pode reformular?",
-        "Ainda estou aprendendo!",
-        "Interessante! Conte mais."
-    ]
-}
+# Carrega respostas do JSON
+def carregar_respostas():
+    caminho = Path(__file__).parent / "data" / "respostas.json"
+    with open(caminho, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+respostas = carregar_respostas()
 
 @app.route("/")
 def home():
@@ -43,10 +21,10 @@ def home():
 def responder():
     mensagem = request.json.get("mensagem", "").lower().strip()
     
-    # Lógica de resposta
     if not mensagem:
         return jsonify({"resposta": "Você não digitou nada..."})
     
+    # Lógica de resposta
     if any(palavra in mensagem for palavra in ["oi", "olá", "eae"]):
         return jsonify({"resposta": random.choice(respostas["saudacoes"])})
     
@@ -56,8 +34,8 @@ def responder():
     elif "piada" in mensagem:
         return jsonify({"resposta": respostas["comandos"]["piada"]})
     
-    elif "hora" in mensagem:
-        return jsonify({"resposta": respostas["comandos"]["hora"]()})
+    elif "dica" in mensagem:
+        return jsonify({"resposta": random.choice(respostas["comandos"]["dica"])})
     
     elif any(palavra in mensagem for palavra in ["como funciona", "funcionamento"]):
         return jsonify({"resposta": respostas["duvidas"]["funcionamento"]})
@@ -66,5 +44,4 @@ def responder():
         return jsonify({"resposta": random.choice(respostas["padrao"])})
 
 if __name__ == "__main__":
-    from datetime import datetime
     app.run(debug=True)

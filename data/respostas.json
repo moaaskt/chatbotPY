@@ -1,0 +1,29 @@
+{
+    "saudacoes": [
+        "Olá! Como posso ajudar? 😊",
+        "Oi! Pronto para conversar!",
+        "E aí, beleza?"
+    ],
+    "duvidas": {
+        "funcionamento": "Sou um chatbot programado para responder perguntas específicas!",
+        "criador": "Fui criado por você usando Python e Flask!",
+        "idade": "Nasci hoje! Estou bem novo ainda..."
+    },
+    "comandos": {
+        "piada": "Por que o Python não gosta de festas? Porque tem medo de 'tuples'!",
+        "dica": [
+            "Digite 'ajuda' para ver opções",
+            "Experimente perguntar sobre meu funcionamento"
+        ]
+    },
+    "despedidas": [
+        "Até logo! 👋",
+        "Foi bom conversar!",
+        "Tchau! Volte sempre!"
+    ],
+    "padrao": [
+        "Não entendi... pode reformular?",
+        "Ainda estou aprendendo!",
+        "Interessante! Conte mais."
+    ]
+}
