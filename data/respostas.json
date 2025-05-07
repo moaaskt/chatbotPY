@@ -2,8 +2,40 @@
     "saudacoes": [
         "Olá! Como posso ajudar? 😊",
         "Oi! Pronto para conversar!",
-        "E aí, beleza?"
+        "E aí, beleza?",
+        "Oi! O que você gostaria de saber?",
+        "Oi! Estou aqui para ajudar!",
+        "Oi! Como posso ajudar você hoje?"
     ],
+    "elogios": {
+        "bot": [
+            "Você é muito inteligente!",
+            "Adoro conversar com você!",
+            "Que chatbot simpático!",
+            "Você é incrível!",
+            "Você é muito legal!",
+            "Você é muito esperto!",
+            "Você é muito interessante!",
+            "Você é muito divertido!",
+            "Você é muito legal!",
+            "Você é muito inteligente!"
+        ],
+        "usuario": [
+            "Você parece ser incrível!",
+            "Que ótimo gosto você tem!",
+            "Você faz ótimas perguntas!",
+            "Você é muito inteligente!",
+            "Você é muito legal!"
+        ]
+    },
+    "servicos": {
+        "consultoria": "Posso ajudar com informações sobre tecnologia e programação",
+        "dicas": {
+            "python": "Use list comprehensions para código mais limpo",
+            "flask": "Organize suas rotas em blueprints para projetos grandes"
+        },
+        "suporte": "Para problemas técnicos, descreva detalhadamente sua dúvida"
+    },
     "duvidas": {
         "funcionamento": "Sou um chatbot programado para responder perguntas específicas!",
         "criador": "Fui criado por você usando Python e Flask!",
@@ -11,9 +43,10 @@
     },
     "comandos": {
         "piada": "Por que o Python não gosta de festas? Porque tem medo de 'tuples'!",
+        
         "dica": [
             "Digite 'ajuda' para ver opções",
-            "Experimente perguntar sobre meu funcionamento"
+            "Experimente perguntar sobre meus serviços"
         ]
     },
     "despedidas": [
