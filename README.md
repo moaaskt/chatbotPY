@@ -1,7 +1,9 @@
-# Chatbot Python com Flask
+# 🤖 ChatbotPY - Assistente de Programação em Python
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Flask](https://img.shields.io/badge/Flask-2.0+-lightgrey)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey?logo=flask)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
 
 Um chatbot simples para conversas sobre tecnologia, construído com Python e Flask.
 
